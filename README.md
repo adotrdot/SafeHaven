@@ -5,8 +5,15 @@
 ## SafeHaven
 ==============================
 
-SafeHaven is a Qt5 application that replicates a diary.
+SafeHaven is a diary application built with the Qt5 library.
 
+## Features
+==============================
+
+- Write about any of your days, be it the past, present, or future.
+- Express yourself by making a simple drawing.
+- Choose one color that you like from the six app's color option.
+- Two background music to accompany you while writing.
 
 ## Requirements
 ==============================
