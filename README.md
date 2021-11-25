@@ -25,6 +25,7 @@ SafeHaven is a diary application built with the Qt5 library.
 
 ## Installing
 ==============================
+
 Download the appimage from the [Releases](https://github.com/adotrdot/SafeHaven/releases) page and set its permission by running `chmod +x` on it.
 
 ## Building from source
