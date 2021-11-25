@@ -1,3 +1,5 @@
+<img src="contents/ui/app_icon128x128.png" alt="SafeHaven"/>
+
 ## SafeHaven
 ==============================
 
