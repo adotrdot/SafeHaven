@@ -18,7 +18,7 @@ SafeHaven is a diary application built with the Qt5 library.
 ## Requirements
 ==============================
 
-- qt >= 5.11.3 (to install and configure, follow the guide here https://zetcode.com/gui/qt5/introduction/)
+- qt >= 5.11.3 (to install and configure, follow the guide [here](https://zetcode.com/gui/qt5/introduction/)
 - fontconfig for displaying app's font
 - gstreamer and libqt5multimedia5-plugins for playing audio
 - libqt5svg5 for displaying app's window icon
