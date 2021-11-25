@@ -1,0 +1,10 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>contents/audio/audio1.mp3</file>
+    <file>contents/audio/audio2.mp3</file>
+    <file>contents/ui/app_icon.svg</file>
+    <file>contents/ui/left_arrow.png</file>
+    <file>contents/ui/right_arrow.png</file>
+    <file>contents/ui/VarelaRound-Regular.ttf</file>
+</qresource>
+</RCC>

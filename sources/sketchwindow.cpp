@@ -56,7 +56,7 @@ void SketchWindow::toOpenImage()
 {
     QTextStream out{stdout};
 
-    QString fileName = "contents/sketches/"
+    QString fileName = "safehaven_data/sketches/"
         + curDate.toString("yyyyMMdd") + ".png";
 
     out << "Opening image..." << endl;
@@ -77,7 +77,7 @@ void SketchWindow::toSaveImage()
 {
     QTextStream out{stdout};
 
-    QString fileName = "contents/sketches/"
+    QString fileName = "safehaven_data/sketches/"
         + curDate.toString("yyyyMMdd") + ".png";
 
     out << "Saving image..." << endl;

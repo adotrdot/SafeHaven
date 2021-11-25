@@ -26,9 +26,9 @@ Editor::Editor(QWidget *parent)
 
     // Preparing texts directory
     QDir dir;
-    if (!dir.exists("contents/texts")) {
+    if (!dir.exists("safehaven_data/texts")) {
         out << "Creating texts directory..." << endl;
-        if (dir.mkpath("contents/texts")) {
+        if (dir.mkpath("safehaven_data/texts")) {
             out << "Successfully created texts directory" << endl;
         } else {
             out << "Failed to create texts directory" << endl;
@@ -38,9 +38,9 @@ Editor::Editor(QWidget *parent)
     }
 
     // Preparing sketches directory
-    if (!dir.exists("contents/sketches")) {
+    if (!dir.exists("safehaven_data/sketches")) {
         out << "Creating sketches directory..." << endl;
-        if (dir.mkpath("contents/sketches")) {
+        if (dir.mkpath("safehaven_data/sketches")) {
             out << "Successfully created sketches directory" << endl;
         } else {
             out << "Failed to create sketches directory" << endl;
@@ -50,7 +50,7 @@ Editor::Editor(QWidget *parent)
     }
 
     // Preparing color scheme config
-    QSettings config(QString("contents/config.ini"), QSettings::IniFormat);
+    QSettings config(QString("safehaven_data/config.ini"), QSettings::IniFormat);
     int clrScheme = config.value("ui/color-scheme", 1).toInt();
 
     // Preparing clrscheme popup,
@@ -295,7 +295,7 @@ void Editor::save()
 {
     QTextStream out{stdout};
 
-    QString fileName = "contents/texts/" + curDate.toString("yyyyMMdd") + ".txt";
+    QString fileName = "safehaven_data/texts/" + curDate.toString("yyyyMMdd") + ".txt";
 
     // Saving text file
     QFile f1{fileName};
@@ -318,7 +318,7 @@ void Editor::setImage()
     int h = 200;
     int w = 200;
     QPixmap newImage(w, h);
-    QString fileName = "contents/sketches/" + curDate.toString("yyyyMMdd") + ".png";
+    QString fileName = "safehaven_data/sketches/" + curDate.toString("yyyyMMdd") + ".png";
 
     QFile f{fileName};
     if (!f.exists()) {
@@ -360,15 +360,15 @@ void Editor::setColorScheme(const QString clrScheme, int btnNum)
 
     calendarPopup->setStyleSheet(
         "QCalendarWidget QWidget#qt_calendar_navigationbar {background-color: " + clrScheme + ";}"
-        "QCalendarWidget QWidget#qt_calendar_prevmonth {qproperty-icon: url(\"contents/ui/left_arrow.png\");}"
-        "QCalendarWidget QWidget#qt_calendar_nextmonth {qproperty-icon: url(\"contents/ui/right_arrow.png\");}"
+        "QCalendarWidget QWidget#qt_calendar_prevmonth {qproperty-icon: url(\":/contents/ui/left_arrow.png\");}"
+        "QCalendarWidget QWidget#qt_calendar_nextmonth {qproperty-icon: url(\":/contents/ui/right_arrow.png\");}"
         "QCalendarWidget QMenu QSpinBox {background-color: " + clrScheme + ";}"
         "QCalendarWidget QToolButton {background-color: " + clrScheme + "; color: black;}"
         "QCalendarWidget QWidget {alternate-background-color: " + clrScheme + ";}"
         "QCalendarWidget QAbstractItemView {background-color: white; selection-color: black;"
         "selection-background-color: " + clrScheme + ";}");
 
-    QSettings config(QString("contents/config.ini"), QSettings::IniFormat);
+    QSettings config(QString("safehaven_data/config.ini"), QSettings::IniFormat);
     config.setValue("ui/color-scheme", btnNum);
 }
 
@@ -462,14 +462,11 @@ void Editor::enableMusic1()
 {
     QTextStream out{stdout};
 
-    QString fileName = "contents/audio/audio1.mp3";
+    QString fileName = ":/contents/audio/audio1.mp3";
     if (!QFile{fileName}.exists()) {
         qWarning("Audio 1 file does not exist");
     } else {
-        QFileInfo fileInfo{fileName};
-        QString filePath = fileInfo.absoluteFilePath();
-
-        musicPlayer->setMedia(QUrl::fromLocalFile(filePath));
+        musicPlayer->setMedia(QUrl("qrc:///contents/audio/audio1.mp3"));
         out << "Music 1 set" << endl;
 
         playMusic();
@@ -480,14 +477,11 @@ void Editor::enableMusic2()
 {
     QTextStream out{stdout};
 
-    QString fileName = "contents/audio/audio2.mp3";
+    QString fileName = ":/contents/audio/audio2.mp3";
     if (!QFile{fileName}.exists()) {
         qWarning("Audio 2 file does not exist");
     } else {
-        QFileInfo fileInfo{fileName};
-        QString filePath = fileInfo.absoluteFilePath();
-
-        musicPlayer->setMedia(QUrl::fromLocalFile(filePath));
+        musicPlayer->setMedia(QUrl("qrc:///contents/audio/audio2.mp3"));
         out << "Music 2 set" << endl;
 
         playMusic();
@@ -515,7 +509,7 @@ QString Editor::getText()
 {
     QTextStream out{stdout};
 
-    QString fileName = "contents/texts/" + curDate.toString("yyyyMMdd") + ".txt";
+    QString fileName = "safehaven_data/texts/" + curDate.toString("yyyyMMdd") + ".txt";
 
     QFile f{fileName};
     if (!f.open(QIODevice::ReadOnly)) {

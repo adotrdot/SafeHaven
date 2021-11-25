@@ -32,6 +32,8 @@ SOURCES += sources/editor.cpp \
            sources/sketch.cpp \
            sources/sketchwindow.cpp
 
+RESOURCES = safehaven.qrc
+
 QT += multimedia widgets
 
 # Output

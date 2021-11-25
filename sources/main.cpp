@@ -9,10 +9,10 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    QFontDatabase::addApplicationFont("contents/ui/VarelaRound-Regular.ttf");
+    QFontDatabase::addApplicationFont(":/contents/ui/VarelaRound-Regular.ttf");
     QFont newFont("Varela Round");
     app.setFont(newFont);
-    app.setWindowIcon(QIcon("contents/ui/app_icon.svg"));
+    app.setWindowIcon(QIcon(":/contents/ui/app_icon.svg"));
     app.setStyle(QStyleFactory::create("Fusion"));
 
     Editor window;
