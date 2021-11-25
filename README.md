@@ -19,21 +19,21 @@ SafeHaven is a diary application built with the Qt5 library.
 ==============================
 
 - qt >= 5.11.3 (to install and configure, follow the guide here https://zetcode.com/gui/qt5/introduction/)
-- libqt5multimedia5
-- libqt5multimedia5-plugins
-- fontconfig
+- fontconfig for displaying app's font
+- gstreamer and libqt5multimedia5-plugins for playing audio
+- libqt5svg5 for displaying app's window icon
 
-## Building
+## Installing
+==============================
+Download the appimage from the [Releases](https://github.com/adotrdot/SafeHaven/releases) page and set its permission by running `chmod +x` on it.
+
+## Building from source
 ==============================
 
 1. Clone this repo
 1. Run `qmake`
 1. Run `make`
-
-## Running
-==============================
-
-Run `./safehaven`
+1. Run `./safehaven` to launch the app after building had finished.
 
 ## Credits
 ==============================
